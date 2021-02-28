@@ -12,17 +12,30 @@
 </head>
 <body>
   
-  <header>
+  <nav>
     <div class="container">
-      <h1>GitHub Finder</h1>
+      <h1 class="h4">GitHub Finder</h1>
     </div>
-  </header>
+  </nav>
 
   <div class="container">
-    
+    <div class="card">
+      <div class="card-body">
+        <h2 class="h3">Search GitHub Users</h2>
+        <p class="parag">Enter a username to fetch a users profile info and repos</p>
+        <div class="form-group">
+          <input type="text" name="github User" id="github-user" placeholder="GitHub Username...">
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div id="profile"></div>
+    </div>
   </div>
 
   <!------------------- Custom Javasript --------------->
+  <script src="Asset/JS/github.js"></script>
+  <script src="Asset/JS/ui.js"></script>
   <script src="Asset/JS/app.js"></script>
 
 </body>
