@@ -9,14 +9,20 @@
 :root {
   --base-size: 1.05rem;
   --type-scale: 1.15;
-  --line-height: 1.6;
-  --height-scale: 1.05;
-  --parag: calc(var(--base-size) * var(--type-scale));
-  --h5: var(--parag);
-  --h4: calc(var(--h5) * var(--type-scale));
+  --line-height: 1.8rem;
+  --height-scale: 1.11;
+  --parag: calc(var(--h5) * var(--type-scale));
+  --h5: var(--base-size);
+  --h4: calc(var(--parag) * var(--type-scale));
   --h3: calc(var(--h4) * var(--type-scale));
   --h2: calc(var(--h3) * var(--type-scale));
   --h1: calc(var(--h2) * var(--type-scale));
+  --parag-Lheight: calc(var(--h5-Lheight) * var(--height-scale));
+  --h5-Lheight: var(--line-height);
+  --h4-Lheight: calc(var(--parag-Lheight) * var(--height-scale));
+  --h3-Lheight: calc(var(--h4-Lheight) * var(--height-scale));
+  --h2-Lheight: calc(var(--h3-Lheight) * var(--height-scale));
+  --h1-Lheight: calc(var(--h2-Lheight) * var(--height-scale));
 }
 
 /* Default setting reset */
@@ -27,6 +33,7 @@ html {
 
 body {
   font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Utilities */
@@ -40,26 +47,32 @@ body {
 
 .h1 {
   font-size: var(--h1);
+  line-height: var(--h1-Lheight);
 }
 
 .h2 {
   font-size: var(--h2);
+  line-height: var(--h2-Lheight);
 }
 
 .h3 {
   font-size: var(--h3);
+  line-height: var(--h3-Lheight);
 }
 
 .h4 {
   font-size: var(--h4);
+  line-height: var(--h4-Lheight);
 }
 
 .h5 {
   font-size: var(--h5);
+  line-height: var(--h5-Lheight);
 }
 
 .parag {
   font-size: var(--parag);
+  line-height: var(--parag-Lheight);
 }
 
 .row {
@@ -226,6 +239,7 @@ footer {
   :root {
     --type-scale: 1.2;
     --base-size: 1.15rem;
+    --height-scale: 1.13;
   }
 
   .container {
@@ -241,8 +255,9 @@ footer {
 
 @media (min-width: 992px) {
   :root {
-    --type-scale: 1.3;
-    --base-size: 1.25rem;
+    --type-scale: 1.2;
+    --base-size: 1.35rem;
+    --height-scale: 1.15;
   }
   
   .container {
