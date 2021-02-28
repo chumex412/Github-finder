@@ -9,6 +9,8 @@
 :root {
   --base-size: 1.05rem;
   --type-scale: 1.15;
+  --line-height: 1.6;
+  --height-scale: 1.05;
   --parag: calc(var(--base-size) * var(--type-scale));
   --h5: var(--parag);
   --h4: calc(var(--h5) * var(--type-scale));
