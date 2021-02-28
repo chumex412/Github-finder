@@ -18,9 +18,18 @@ gitHubUser.addEventListener('keyup', function(e) {
     .then(data => {
       if(data.profile.message === "Not Found") {
         //Show alert
+        ui.showAlert('User Not Found', 'alert');
       } else {
+
+        // Show profile
         ui.showProfile(data.profile);
+        // Display Repos
+        ui.showRepos(data.repos);
       }
     }); 
+  } else {
+
+    // Clear Profile
+    ui.clearProfile();
   }
 });
