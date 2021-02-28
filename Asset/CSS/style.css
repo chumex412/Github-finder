@@ -36,7 +36,111 @@ body {
   margin-right: auto;
 }
 
+.h1 {
+  font-size: var(--h1);
+}
 
+.h2 {
+  font-size: var(--h2);
+}
+
+.h3 {
+  font-size: var(--h3);
+}
+
+.h4 {
+  font-size: var(--h4);
+}
+
+.h5 {
+  font-size: var(--h5);
+}
+
+.parag {
+  font-size: var(--parag);
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  --columns: 6;
+}
+
+[class*="col-"] {
+  --width: 6;
+  --init-gap: 1%;
+  --initial-basis: calc((var(--width) / var(--columns)) * 100%);
+  --gap: calc((var(--columns) - var(--width)) * var(--init-gap));
+  flex-basis: calc(var(--initial-basis) - var(--gap));
+}
+
+.badge {
+  font-size: var(--parag);
+  padding: 0.25rem 0.4rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+
+.badge-primary {
+  background-color: rgb(0, 123, 255);
+  color: #fff;
+}
+
+.badge-secondary {
+  background-color: rgb(108, 117, 125);
+  color: #fff;
+}
+
+.badge-warning {
+  background-color: rgb(40, 167, 69);
+  color: #fff;
+}
+
+.badge-info {
+  color: #fff;
+  background-color: rgb(23, 162, 184);
+}
+
+.badge-warning {
+  color: rgb(33, 37, 41);
+  background-color: rgb(255, 193, 7);
+}
+
+.alert {
+  font-size: var(--parag);
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  background-color: #d33949;
+}
+
+/* Main styling */
+
+nav {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+  _border: 1px solid #666;
+}
+
+.card-body {
+  padding: 0 1.5rem;
+}
+
+input {
+  padding: 1rem;
+  width: 100%;
+}
 
 @media (min-width: 600px) {
   :root {
@@ -52,6 +156,10 @@ body {
 @media (min-width: 768px) {
   :root {
     --type-scale: 1.25;
+  }
+
+  .card {
+    max-width: 90%;
   }
 }
 
@@ -69,5 +177,25 @@ body {
 @media (min-width: 1200px) {
   .container {
     max-width: 1100px;
+  }
+
+  .col-1 {
+    --width: 1;
+  }
+
+  .col-2 {
+    --width: 2;
+  }
+
+  .col-3 {
+    --width: 3;
+  }
+
+  .col-4 {
+    --width: 4;
+  }
+
+  .col-5 {
+    --width: 5;
   }
 }
