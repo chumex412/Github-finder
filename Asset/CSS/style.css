@@ -62,22 +62,61 @@ body {
 
 .row {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
   --columns: 6;
 }
 
 [class*="col-"] {
   --width: 6;
-  --init-gap: 1%;
-  --initial-basis: calc((var(--width) / var(--columns)) * 100%);
+  --init-gap: 0.5%;
+  --initial-basis: calc(var(--width) / var(--columns) * 100%);
   --gap: calc((var(--columns) - var(--width)) * var(--init-gap));
   flex-basis: calc(var(--initial-basis) - var(--gap));
 }
 
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+.btn {
+  width: 100%;
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  text-align: center;
+  border-radius: 2rem;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: var(--parag);
+  transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: rgb(0, 123, 255);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: rgba(0, 123, 255, 0.7);
+}
+
 .badge {
   font-size: var(--parag);
-  padding: 0.25rem 0.4rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 0.25rem;
   display: inline-block;
   text-align: center;
@@ -96,7 +135,7 @@ body {
   color: #fff;
 }
 
-.badge-warning {
+.badge-success {
   background-color: rgb(40, 167, 69);
   color: #fff;
 }
@@ -119,6 +158,28 @@ body {
   background-color: #d33949;
 }
 
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.unordered-list {
+  border: 1px solid #666;
+}
+
+.list-item {
+  border-bottom: 1px solid #666;
+  padding: 1rem;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-unstyled {
+  list-style: none;
+}
+
 /* Main styling */
 
 nav {
@@ -130,11 +191,11 @@ nav {
   width: 100%;
   margin: 0 auto;
   min-height: 100%;
-  _border: 1px solid #666;
+  border: 1px solid #666;
 }
 
 .card-body {
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem;
 }
 
 input {
@@ -172,12 +233,6 @@ input {
   .container {
     max-width: 960px;
   }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1100px;
-  }
 
   .col-1 {
     --width: 1;
@@ -197,5 +252,15 @@ input {
 
   .col-5 {
     --width: 5;
+  }
+
+  .col-6 {
+    --width: 6;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1100px;
   }
 }
