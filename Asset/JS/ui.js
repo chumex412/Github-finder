@@ -11,7 +11,7 @@ class UI {
           <div class="row">
             <div class="col-2">
               <img class="img-fluid mb-2" src="${user.avatar_url}">
-              <a href="${user.url}" class="btn btn-primary mb-2">View Profile</a>
+              <a href="${user.html_url}" class="btn btn-primary mb-2">View Profile</a>
             </div>
             <div class="col-4">
               <span class="badge badge-primary">Public Repos: ${user.public_repos}</span>
@@ -29,7 +29,7 @@ class UI {
           </div>
         </div>
       </div>
-      <h2 class="h3">Latest Repos</h2>
+      <h2 class="h3 mb-2">Latest Repos</h2>
       <div id="repos"></div>
     `;
   }
@@ -40,7 +40,6 @@ class UI {
 
     repos.forEach(repo => {
       output += `
-        <br/>
         <div class="card mb-2">
           <div class="card-body">
             <div class="row">
@@ -56,7 +55,6 @@ class UI {
             </div>
           </div>
         </div>
-        <br/>
       `;
     });
     // Output the Repos to the DOM
